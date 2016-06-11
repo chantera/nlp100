@@ -25,10 +25,10 @@ class TreeParser():
                 if reading:
                     self._stack[-1].append(''.join(reading))
                     reading.clear()
-                elif character == ')':
-                    if reading:
-                        self._stack[-1].append(''.join(reading))
-                    reading.clear()
+            elif character == ')':
+                if reading:
+                    self._stack[-1].append(''.join(reading))
+                reading.clear()
                 self._stack[-2].append(self._stack.pop())
             else:  # string
                 reading.append(character)
